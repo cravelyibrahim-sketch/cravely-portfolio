@@ -278,7 +278,7 @@
     .visual {
       position: relative;
       display: grid;
-      min-height: 450px;
+      min-height: 400px;
       place-items: center;
     }
     .visual-halo {
@@ -351,41 +351,6 @@
       border-radius: inherit;
       object-fit: cover;
       object-position: center top;
-    }
-    .initial-mark {
-      position: absolute;
-      z-index: 1;
-      bottom: -10px;
-      left: 50%;
-      width: 56px;
-      height: 56px;
-      overflow: visible;
-      transform: translateX(-50%);
-    }
-    .initial-stroke {
-      fill: none;
-      stroke: var(--pink);
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-dasharray: 100;
-      stroke-dashoffset: 100;
-      animation: initial-write .8s linear .25s forwards;
-    }
-    .initial-pen {
-      opacity: 0;
-      animation: initial-pen-visibility .8s linear .25s forwards;
-    }
-    @keyframes initial-write {
-      to { stroke-dashoffset: 0; }
-    }
-    @keyframes initial-pen-visibility {
-      5%, 90% { opacity: 1; }
-      to { opacity: 0; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .initial-stroke { animation-duration: .3s; animation-delay: 0s; }
-      .initial-pen { display: none; }
     }
     .profile-card::before, .profile-card::after {
       position: absolute;
@@ -645,7 +610,7 @@
       }
       .hero { min-height: auto; padding: 155px 0 80px; }
       .hero-grid { grid-template-columns: 1fr .75fr; gap: 10px; }
-      .visual { min-height: 450px; transform: scale(.85); }
+      .visual { min-height: 400px; transform: scale(.85); }
       .section { padding: 90px 0; }
       .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -709,7 +674,7 @@
       .hero { padding: 130px 0 55px; }
       .hero-grid { grid-template-columns: 1fr; }
       .hero-copy > p { font-size: .97rem; }
-      .visual { min-height: 450px; margin-top: 6px; transform: scale(.86); }
+      .visual { min-height: 400px; margin-top: 6px; transform: scale(.86); }
       .tag-three { top: 125px; left: 0; }
       .tag-four { right: 0; bottom: 120px; }
       .section { padding: 76px 0; }
