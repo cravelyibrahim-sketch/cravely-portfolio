@@ -10,7 +10,11 @@ const activeSection = ref(
   route.path === "/" && sectionIds.includes(initialSection) ? initialSection : "home"
 );
 const mobileNavVisible = ref(true);
-const theme = ref("light");
+const themeStorageKey = "cravely-portfolio-theme";
+const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const theme = ref(
+  document.documentElement.dataset.theme || (systemThemeQuery.matches ? "dark" : "light")
+);
 let lastScrollY = 0;
 
 function isActiveSection(section) {
@@ -41,14 +45,27 @@ function updateActiveSection() {
   activeSection.value = currentSection;
 }
 
-function toggleTheme() {
-  theme.value = theme.value === "light" ? "dark" : "light";
+function applyTheme() {
   document.documentElement.dataset.theme = theme.value;
   const themeColor = document.querySelector('meta[name="theme-color"]');
 
   if (themeColor) {
     themeColor.setAttribute("content", theme.value === "light" ? "#fcfafb" : "#111114");
   }
+}
+
+function handleSystemThemeChange(event) {
+  const savedTheme = localStorage.getItem(themeStorageKey);
+  if (savedTheme === "light" || savedTheme === "dark") return;
+
+  theme.value = event.matches ? "dark" : "light";
+  applyTheme();
+}
+
+function toggleTheme() {
+  theme.value = theme.value === "light" ? "dark" : "light";
+  localStorage.setItem(themeStorageKey, theme.value);
+  applyTheme();
 }
 
 function handleScroll() {
@@ -67,12 +84,15 @@ function handleScroll() {
 }
 
 onMounted(() => {
+  applyTheme();
+  systemThemeQuery.addEventListener("change", handleSystemThemeChange);
   lastScrollY = window.scrollY;
   window.addEventListener("scroll", handleScroll, { passive: true });
   requestAnimationFrame(updateActiveSection);
 });
 
 onBeforeUnmount(() => {
+  systemThemeQuery.removeEventListener("change", handleSystemThemeChange);
   window.removeEventListener("scroll", handleScroll);
 });
 

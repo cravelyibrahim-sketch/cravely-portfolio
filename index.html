@@ -1,9 +1,23 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fcfafb">
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("cravely-portfolio-theme");
+      const theme = savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content =
+        theme === "dark" ? "#111114" : "#fcfafb";
+    })();
+  </script>
   <meta name="description" content="Cravely Ibrahim is an IT graduate from SUA with 5+ years of experience in UI/UX prototyping, video editing, and AI content generation.">
   <title>Cravely Ibrahim - Digital Experience Designer</title>
   <link rel="icon" type="image/png" href="/favicon.png">
