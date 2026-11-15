@@ -474,6 +474,7 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       background: var(--panel);
+      cursor: pointer;
       transition: transform .32s cubic-bezier(.22, 1, .36, 1), border-color .32s ease;
     }
     .project-card:hover { transform: translateY(-4px) scale(1.005); border-color: rgba(255,51,100,.42); }
