@@ -34,7 +34,7 @@ import photo from "../images/photo.png";
         </div>
         <div class="float-tag tag-two">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <rect x="3" y="5" width="18" height="14" rx="3" />
             <path d="m10 9 5 3-5 3z" />
           </svg>
           Video &amp; Motion

@@ -15,11 +15,11 @@ import { services } from "../constants/portfolio";
       <article v-for="service in services" :key="service.title" class="service-card reveal">
         <div class="service-icon" aria-hidden="true">
           <svg v-if="service.icon === 'prototype'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <rect x="3" y="4" width="18" height="16" rx="2" />
+            <rect x="3" y="4" width="18" height="16" rx="3" />
             <path d="M8 8h8M8 12h5m-5 4h8" />
           </svg>
           <svg v-else-if="service.icon === 'video'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <rect x="3" y="5" width="18" height="14" rx="3" />
             <path d="m10 9 5 3-5 3z" />
           </svg>
           <svg v-else-if="service.icon === 'brand'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">

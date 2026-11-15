@@ -186,7 +186,7 @@ watch(() => route.fullPath, () => {
       :aria-current="isActiveSection('work') ? 'location' : undefined"
     >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-        <rect x="3" y="4" width="18" height="16" rx="2" />
+        <rect x="3" y="4" width="18" height="16" rx="3" />
         <path d="M3 9h18M8 9v11m8-11v11" />
       </svg>
       <span>Work</span>
@@ -210,7 +210,7 @@ watch(() => route.fullPath, () => {
       :aria-current="route.path === '/contact' ? 'page' : isActiveSection('contact') ? 'location' : undefined"
     >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <rect x="3" y="5" width="18" height="14" rx="3" />
         <path d="m4 7 8 6 8-6" />
       </svg>
       <span>Contact</span>
