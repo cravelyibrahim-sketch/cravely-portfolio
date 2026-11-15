@@ -46,6 +46,18 @@ import cravelyAvatar from "../images/cravely-avatar.jpg";
             <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.18V2h-3.43v13.67a2.9 2.9 0 1 1-2.9-2.9c.28 0 .55.04.81.12V9.36a6.34 6.34 0 1 0 5.52 6.29V8.7a8.18 8.18 0 0 0 4.77 1.52V6.8a4.8 4.8 0 0 1-1-.11Z" />
           </svg>
         </a>
+        <a
+          class="footer-social-link"
+          href="https://youtube.com/@cradob.company"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Cradob Company on YouTube"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="4" />
+            <path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
       </nav>
       <RouterLink :to="{ path: '/', hash: '#home' }">Back to top ↑</RouterLink>
     </div>
