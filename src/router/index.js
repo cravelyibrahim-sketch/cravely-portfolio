@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import ContactView from "../views/ContactView.vue";
 import HomeView from "../views/HomeView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
+import ServiceDetailView from "../views/ServiceDetailView.vue";
 
 let sectionScrollTween;
 
@@ -45,9 +46,16 @@ const router = createRouter({
   routes: [
     { path: "/", name: "home", component: HomeView },
     { path: "/contact", name: "contact", component: ContactView },
+    { path: "/services/:slug", name: "service-detail", component: ServiceDetailView },
     { path: "/:pathMatch(.*)*", name: "not-found", component: NotFoundView }
   ],
   scrollBehavior(to) {
+    if (to.name === "service-detail") {
+      sectionScrollTween?.kill();
+      sectionScrollTween = undefined;
+      return false;
+    }
+
     if (to.hash) {
       const target = () => document.querySelector(to.hash);
 

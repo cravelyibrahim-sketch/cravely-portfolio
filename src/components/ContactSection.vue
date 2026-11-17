@@ -1,3 +1,7 @@
+<script setup>
+import WhatsAppIcon from "./WhatsAppIcon.vue";
+</script>
+
 <template>
   <section class="contact-section wrap" id="contact">
     <div class="contact-card reveal">
@@ -11,7 +15,8 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          WhatsApp Me
+          <WhatsAppIcon class="button-whatsapp-icon" />
+          <span>WhatsApp Me</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <path d="M7 17 17 7M7 7h10v10" />
           </svg>
